@@ -8,7 +8,7 @@ def get_exif_date(img_path):
         exif_dict = piexif.load(img_path)
         date_str = exif_dict['Exif'][piexif.ExifIFD.DateTimeOriginal].decode()
         # 格式: "YYYY:MM:DD HH:MM:SS"
-        date = date_str.split(' ')[0].replace(':', '-')
+        date = date_str.split(' ')[0].replace(':', '.')
         return date
     except Exception:
         return None
